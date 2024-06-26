@@ -1,4 +1,3 @@
-import { Provider as JotaiProvider } from 'jotai'
 import { Noto_Sans_JP } from 'next/font/google'
 import 'normalize.css/normalize.css'
 import { CookieBanner, GoogleTagManager } from '@/components/gtm'
@@ -26,13 +25,11 @@ export default function RootLayout({
       <head>
         <GoogleTagManager />
       </head>
-      <JotaiProvider>
-        <body className={nsjp.className}>
-          <Navbar showContent={true} />
-          {children}
-          <CookieBanner />
-        </body>
-      </JotaiProvider>
+      <body className={nsjp.className}>
+        <Navbar showContent={true} />
+        {children}
+        <CookieBanner />
+      </body>
     </html>
   )
 }
