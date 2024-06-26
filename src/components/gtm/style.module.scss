@@ -1,0 +1,28 @@
+.gtagPopup {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  max-width: 300px;
+  padding: 20px 30px;
+  word-break: break-all;
+  background-color: var(--accent-info-fill);
+  border-radius: var(--radius-md);
+
+  .linkUl {
+    text-decoration: underline;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+
+    .buttonDecline {
+      color: var(--text-primary);
+      background-color: var(--text-tertiary);
+    }
+  }
+}

@@ -1,0 +1,3 @@
+src/components/icons/generated/*.tsx
+src/api/client.d.ts
+src/lib/storageHelper.ts
