@@ -143,7 +143,7 @@ paths:
                 $ref: '#/components/schemas/Error500'
   /projects/{projectId}/list:
     get:
-      operationId: getProject
+      operationId: getProjectAuthed
       tags:
         - Projects
       summary: Get Project
@@ -161,7 +161,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TanzakuSchemaArray'
+                $ref: '#/components/schemas/TanzakuResSchemaArray'
         '500':
           description: Internal Server Error
           content:
@@ -255,7 +255,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TanzakuSchemaArray'
+                $ref: '#/components/schemas/TanzakuResSchemaArray'
         '500':
           description: Internal Server Error
           content:
@@ -411,7 +411,7 @@ components:
         disabled:
           type: boolean
           example: false
-    TanzakuSchemaArray:
+    TanzakuResSchemaArray:
       type: array
       items:
         $ref: '#/components/schemas/TanzakuResponseSchema'
