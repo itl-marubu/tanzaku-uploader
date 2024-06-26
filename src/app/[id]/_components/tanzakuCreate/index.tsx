@@ -1,8 +1,8 @@
 'use client'
 
-import { getProject } from '@/api'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { getProject } from '@/api'
 import { TanzakuForm } from './_components/tanzakuForm'
 
 type Props = {
@@ -29,7 +29,7 @@ export const CreateTanzaku: React.FC<Props> = ({ projectId }) => {
       console.error(e)
       router.push('/')
     })
-  }, [projectId])
+  }, [projectId, router])
 
   return (
     <main>
