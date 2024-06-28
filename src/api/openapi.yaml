@@ -141,9 +141,43 @@ paths:
             text/plain:
               schema:
                 $ref: '#/components/schemas/Error500'
+    patch:
+      operationId: updateProject
+      tags:
+        - Projects
+      summary: Update Project
+      description: Update a project by ID
+      parameters:
+        - name: projectId
+          in: path
+          required: true
+          description: ID of the project to get
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddProjectRequest'
+      responses:
+        '200':
+          description: Project found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectSchema'
+        '500':
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Error500'
+      security:
+        - bearerAuth: []
   /projects/{projectId}/list:
     get:
-      operationId: getProjectAuthed
+      operationId: getAllProjects
       tags:
         - Projects
       summary: Get Project
@@ -161,7 +195,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TanzakuResSchemaArray'
+                $ref: '#/components/schemas/TanzakuSchemaArray'
         '500':
           description: Internal Server Error
           content:
@@ -200,7 +234,7 @@ paths:
       security:
         - bearerAuth: []
 
-  /tanzaku/{projectId}/new:
+  /tanzaku/{id}:
     post:
       operationId: newTanzaku
       tags:
@@ -208,7 +242,7 @@ paths:
       summary: New Tanzaku
       description: Create a new Tanzaku
       parameters:
-        - name: projectId
+        - name: id
           in: path
           required: true
           description: ID of the project to get
@@ -235,15 +269,14 @@ paths:
                 $ref: '#/components/schemas/Error500'
       security:
         - bearerAuth: []
-  /tanzaku/{projectId}/list:
     get:
-      operationId: getTanzaku
+      operationId: getTanzakuPicked
       tags:
         - Tanzaku
       summary: Get Tanzaku
-      description: Get a tanzaku by project ID
+      description: 短冊を１０個古い順に取ってくるやつ
       parameters:
-        - name: projectId
+        - name: id
           in: path
           required: true
           description: ID of the project to get
@@ -255,23 +288,49 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TanzakuResSchemaArray'
+                $ref: '#/components/schemas/TanzakuSchemaArray'
         '500':
           description: Internal Server Error
           content:
             text/plain:
               schema:
                 $ref: '#/components/schemas/Error500'
-
-  /tanzaku/del/{tanzakuId}:
+    patch:
+      operationId: reviveTanzaku
+      tags:
+        - Tanzaku
+      summary: Revive a Tanzaku
+      description: Revive a Tanzaku
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the tanzaku to delete
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Project found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TanzakuResponseSchema'
+        '500':
+          description: Internal Server Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Error500'
+      security:
+        - bearerAuth: []
     delete:
       operationId: deleteTanzaku
       tags:
         - Tanzaku
-      summary: New Tanzaku
-      description: Create a new Tanzaku
+      summary: Delete Tanzaku
+      description: Delete a Tanzaku
       parameters:
-        - name: tanzakuId
+        - name: id
           in: path
           required: true
           description: ID of the tanzaku to delete
@@ -337,6 +396,12 @@ components:
         description:
           type: string
           example: 'Project Description'
+        noticeLarge:
+          type: string
+          example: 'Notice shown largely'
+        noticeQR:
+          type: string
+          example: 'Notice shown beside QR'
     ProjectSchema:
       type: object
       required:
@@ -354,6 +419,12 @@ components:
         description:
           type: string
           example: 'Project Description'
+        noticeLarge:
+          type: string
+          example: 'Notice shown largely'
+        noticeQR:
+          type: string
+          example: 'Notice shown beside QR'
         ownerId:
           type: string
           example: 'clxrat7xl0001xd2txfzakzz9'
@@ -411,7 +482,7 @@ components:
         disabled:
           type: boolean
           example: false
-    TanzakuResSchemaArray:
+    TanzakuSchemaArray:
       type: array
       items:
         $ref: '#/components/schemas/TanzakuResponseSchema'
