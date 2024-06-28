@@ -31,10 +31,10 @@ type tanzaku = {
 }
 
 export const createTanzaku = async (projId: string, tanzaku: tanzaku) => {
-  const response = await client.POST('/tanzaku/{projectId}/new', {
+  const response = await client.POST('/tanzaku/{id}', {
     params: {
       path: {
-        projectId: projId,
+        id: projId,
       },
     },
     body: tanzaku,
