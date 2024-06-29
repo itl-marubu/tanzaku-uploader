@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { getProject } from '@/api'
-import { TanzakuForm } from './_components/tanzakuForm'
+import { TanzakuForm } from '../tanzakuForm'
 
 type Props = {
   projectId: string

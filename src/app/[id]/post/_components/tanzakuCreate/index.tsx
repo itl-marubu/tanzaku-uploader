@@ -4,8 +4,9 @@ import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { getProject } from '@/api'
 import { Logo } from '@/components/Logo'
-import { TanzakuForm } from './_components/tanzakuForm'
+import { TanzakuForm } from '../tanzakuForm'
 import styles from './index.module.scss'
+import { event } from '@/components/gtm'
 
 type Props = {
   projectId: string
@@ -29,6 +30,10 @@ export const CreateTanzaku: React.FC<Props> = ({ projectId }) => {
     }
     fetchProject().catch((e) => {
       console.error(e)
+      event({
+        event: 'error_get_project',
+        category: 'click',
+      })
       router.push('/')
     })
   }, [projectId, router])

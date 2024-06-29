@@ -3,6 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { createTanzaku } from '@/api'
 import { Button } from '@/components/Button'
 import styles from './index.module.scss'
+import { event } from '@/components/gtm'
 
 type FieldValues = {
   textLine1: string
@@ -25,9 +26,19 @@ export const TanzakuForm: React.FC<Props> = ({ eventId }) => {
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     const res = await createTanzaku(eventId, data).catch((e) => {
       console.error(e)
+      event({
+        event: 'click_create_tanzaku',
+        category: 'click',
+        status: 'fail',
+      })
       alert(`作成に失敗しました`)
     })
     if (res !== undefined) {
+      event({
+        event: 'click_create_tanzaku',
+        category: 'click',
+        status: 'success',
+      })
       alert('作成しました')
       reset()
     }
