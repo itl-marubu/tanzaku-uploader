@@ -53,7 +53,7 @@ export const TanzakuForm: React.FC<Props> = ({ eventId }) => {
     <form onSubmit={handleSubmit(onSubmit)} className={styles.formWrap}>
       <div className={styles.inputWrap}>
         <label htmlFor="textLine" className={styles.label}>
-          まずは短冊に書くことを教えてください。
+          短冊に書くことを教えてください。
         </label>
         <input
           {...register('textLine', { required: true, maxLength: 14 })}

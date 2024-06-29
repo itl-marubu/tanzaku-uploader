@@ -45,11 +45,7 @@ export const CookieBanner = () => {
       <div className={styles.gtagPopup}>
         <div className="text-center">
           <p>
-            このウェブサイトではサードパーティCookieを使用します。詳細は
-            <Link href="/info/gtm" className={styles.linkUl}>
-              こちら
-            </Link>
-            をご参照ください。
+            このウェブサイトではサードパーティCookieを使用します。詳細は投稿画面下部のご案内をご参照ください。
           </p>
         </div>
 
