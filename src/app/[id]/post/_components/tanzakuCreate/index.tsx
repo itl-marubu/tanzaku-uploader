@@ -40,7 +40,7 @@ export const CreateTanzaku: React.FC<Props> = ({ projectId }) => {
 
   return (
     <main className={styles.main}>
-      <Logo logoColor="#fff" className={styles.logo} />
+      {/* <Logo logoColor="#fff" className={styles.logo} /> */}
       <h2>{project.name}に，あなたの短冊を飾りましょう。</h2>
       <TanzakuForm eventId={projectId} />
     </main>

@@ -21,9 +21,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <head>
-        <GoogleTagManager />
-      </head>
+      {' '}
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID || ''} />
       <body className={nsjp.className}>
         {children}
         <CookieBanner />
