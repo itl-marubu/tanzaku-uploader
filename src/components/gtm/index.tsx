@@ -15,26 +15,6 @@ type WindowWithDataLayer = Window & {
 
 declare const window: WindowWithDataLayer
 
-export const event = (obj: DataObj) => {
-  if (
-    typeof window !== 'undefined' &&
-    typeof window.dataLayer !== 'undefined'
-  ) {
-    window.dataLayer.push(obj)
-  }
-}
-
-export const withEvent = (obj: DataObj) => {
-  return <Args extends unknown[], Return, F extends (...args: Args) => Return>(
-    fn: F,
-  ) => {
-    return (...args: Args) => {
-      event(obj)
-      return fn(...args)
-    }
-  }
-}
-
 export const CookieBanner = () => {
   const [_, setCookieConsent] = useState(false)
   const [showPopup, setShowPopup] = useState(false)

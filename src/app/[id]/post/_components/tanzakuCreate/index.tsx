@@ -3,10 +3,10 @@
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { getProject } from '@/api'
-import { event } from '@/components/gtm'
 import { Logo } from '@/components/Logo'
 import styles from './index.module.scss'
 import { TanzakuForm } from '../tanzakuForm'
+import { sendGTMEvent } from '@next/third-parties/google'
 
 type Props = {
   projectId: string
@@ -30,7 +30,7 @@ export const CreateTanzaku: React.FC<Props> = ({ projectId }) => {
     }
     fetchProject().catch((e) => {
       console.error(e)
-      event({
+      sendGTMEvent({
         event: 'error_get_project',
         category: 'click',
       })

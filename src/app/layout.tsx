@@ -1,9 +1,10 @@
 import { Noto_Sans_JP } from 'next/font/google'
 import 'normalize.css/normalize.css'
-import { CookieBanner, GoogleTagManager } from '@/components/gtm'
+import { CookieBanner } from '@/components/gtm'
 import '@/styles/colors.scss'
 import '@/styles/variables.scss'
 import type { Metadata } from 'next'
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const nsjp = Noto_Sans_JP({
   subsets: ['latin-ext'],
@@ -21,7 +22,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      {' '}
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID || ''} />
       <body className={nsjp.className}>
         {children}

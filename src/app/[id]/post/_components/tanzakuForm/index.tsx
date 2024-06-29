@@ -2,8 +2,8 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { createTanzaku } from '@/api'
 import { Button } from '@/components/Button'
-import { event } from '@/components/gtm'
 import styles from './index.module.scss'
+import { sendGTMEvent } from '@next/third-parties/google'
 
 type FieldValues = {
   textLine: string
@@ -31,7 +31,7 @@ export const TanzakuForm: React.FC<Props> = ({ eventId }) => {
       nameLine: data.nameLine,
     }).catch((e) => {
       console.error(e)
-      event({
+      sendGTMEvent({
         event: 'click_create_tanzaku',
         category: 'click',
         status: 'fail',
@@ -39,7 +39,7 @@ export const TanzakuForm: React.FC<Props> = ({ eventId }) => {
       alert(`作成に失敗しました。`)
     })
     if (res !== undefined) {
-      event({
+      sendGTMEvent({
         event: 'click_create_tanzaku',
         category: 'click',
         status: 'success',
