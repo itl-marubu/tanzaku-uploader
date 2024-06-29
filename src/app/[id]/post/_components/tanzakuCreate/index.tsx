@@ -1,12 +1,11 @@
 'use client'
 
+import { sendGTMEvent } from '@next/third-parties/google'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { getProject } from '@/api'
-import { Logo } from '@/components/Logo'
 import styles from './index.module.scss'
 import { TanzakuForm } from '../tanzakuForm'
-import { sendGTMEvent } from '@next/third-parties/google'
 
 type Props = {
   projectId: string

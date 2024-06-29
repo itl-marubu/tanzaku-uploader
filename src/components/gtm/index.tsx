@@ -1,19 +1,10 @@
 'use client'
+import { sendGTMEvent } from '@next/third-parties/google'
 import Link from 'next/link'
-import Script from 'next/script'
 import { useEffect, useState } from 'react'
 import { getLocalStorage, setLocalStorage } from '@/lib/storageHelper'
 import styles from './style.module.scss'
 import { Button } from '../Button'
-import { sendGTMEvent } from '@next/third-parties/google'
-
-type DataObj = Record<string, string | number>
-
-type WindowWithDataLayer = Window & {
-  dataLayer: DataObj[]
-}
-
-declare const window: WindowWithDataLayer
 
 export const CookieBanner = () => {
   const [_, setCookieConsent] = useState(false)

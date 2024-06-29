@@ -1,10 +1,10 @@
+import { GoogleTagManager } from '@next/third-parties/google'
 import { Noto_Sans_JP } from 'next/font/google'
 import 'normalize.css/normalize.css'
 import { CookieBanner } from '@/components/gtm'
 import '@/styles/colors.scss'
 import '@/styles/variables.scss'
 import type { Metadata } from 'next'
-import { GoogleTagManager } from '@next/third-parties/google'
 
 const nsjp = Noto_Sans_JP({
   subsets: ['latin-ext'],

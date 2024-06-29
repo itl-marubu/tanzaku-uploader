@@ -1,9 +1,9 @@
 'use client'
+import { sendGTMEvent } from '@next/third-parties/google'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { createTanzaku } from '@/api'
 import { Button } from '@/components/Button'
 import styles from './index.module.scss'
-import { sendGTMEvent } from '@next/third-parties/google'
 
 type FieldValues = {
   textLine: string
