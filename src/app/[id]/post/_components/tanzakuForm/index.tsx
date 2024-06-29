@@ -2,8 +2,8 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { createTanzaku } from '@/api'
 import { Button } from '@/components/Button'
-import styles from './index.module.scss'
 import { event } from '@/components/gtm'
+import styles from './index.module.scss'
 
 type FieldValues = {
   textLine: string

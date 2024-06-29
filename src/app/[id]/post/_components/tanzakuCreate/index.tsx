@@ -3,10 +3,10 @@
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { getProject } from '@/api'
-import { Logo } from '@/components/Logo'
-import { TanzakuForm } from '../tanzakuForm'
-import styles from './index.module.scss'
 import { event } from '@/components/gtm'
+import { Logo } from '@/components/Logo'
+import styles from './index.module.scss'
+import { TanzakuForm } from '../tanzakuForm'
 
 type Props = {
   projectId: string
