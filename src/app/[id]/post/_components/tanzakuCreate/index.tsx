@@ -3,9 +3,9 @@
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { getProject } from '@/api'
+import { Logo } from '@/components/Logo'
 import { TanzakuForm } from './_components/tanzakuForm'
 import styles from './index.module.scss'
-import { Logo } from '@/components/Logo'
 
 type Props = {
   projectId: string

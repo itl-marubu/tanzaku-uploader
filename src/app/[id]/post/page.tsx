@@ -1,7 +1,7 @@
-import { CreateTanzaku } from './_components/tanzakuCreate'
-import { Shippori_Mincho_B1 } from 'next/font/google'
-import styles from './page.module.scss'
 import clsx from 'clsx'
+import { Shippori_Mincho_B1 } from 'next/font/google'
+import { CreateTanzaku } from './_components/tanzakuCreate'
+import styles from './page.module.scss'
 
 const sm = Shippori_Mincho_B1({
   subsets: ['latin-ext'],
