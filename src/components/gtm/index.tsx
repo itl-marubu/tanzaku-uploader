@@ -1,6 +1,5 @@
 'use client'
 import { sendGTMEvent } from '@next/third-parties/google'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { getLocalStorage, setLocalStorage } from '@/lib/storageHelper'
 import styles from './style.module.scss'
