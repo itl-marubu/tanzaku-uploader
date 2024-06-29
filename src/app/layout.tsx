@@ -3,7 +3,6 @@ import 'normalize.css/normalize.css'
 import { CookieBanner, GoogleTagManager } from '@/components/gtm'
 import '@/styles/colors.scss'
 import '@/styles/variables.scss'
-import { Navbar } from './_components/Navbar'
 import type { Metadata } from 'next'
 
 const nsjp = Noto_Sans_JP({
@@ -26,7 +25,6 @@ export default function RootLayout({
         <GoogleTagManager />
       </head>
       <body className={nsjp.className}>
-        <Navbar showContent={true} />
         {children}
         <CookieBanner />
       </body>

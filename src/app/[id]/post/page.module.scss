@@ -1,0 +1,12 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100lvw;
+  min-height: 100lvh;
+  margin: 0 auto;
+  font-family: var(--font-mincho);
+  color: #fff;
+  background: #000;
+}
