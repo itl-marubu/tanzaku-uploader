@@ -1,0 +1,36 @@
+.main {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-break: auto-phrase;
+
+  .topHeading {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+
+  .icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    .snsIcon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      margin-top: 20px;
+      color: #000;
+      background: #fff;
+      border-radius: calc(infinity * 1px);
+
+      &:hover {
+        color: #000;
+        background: #ddd;
+      }
+    }
+  }
+}

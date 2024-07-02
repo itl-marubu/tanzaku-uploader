@@ -1,0 +1,11 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100lvh - 40px);
+  padding: 20px;
+  font-family: var(--font-mincho);
+  color: #fff;
+  background: #000;
+}
