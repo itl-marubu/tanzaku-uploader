@@ -19,7 +19,6 @@ export const TanzakuForm: React.FC<Props> = ({ eventId }) => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm<FieldValues>()
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
