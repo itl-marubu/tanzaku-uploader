@@ -19,7 +19,6 @@ export const TanzakuForm: React.FC<Props> = ({ eventId }) => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm<FieldValues>()
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
@@ -44,8 +43,9 @@ export const TanzakuForm: React.FC<Props> = ({ eventId }) => {
         category: 'click',
         status: 'success',
       })
-      alert('作成しました')
-      reset()
+      location.replace(
+        `/${eventId}/submitted?name=${data.nameLine}&text=${data.textLine}`,
+      )
     }
   }
 
