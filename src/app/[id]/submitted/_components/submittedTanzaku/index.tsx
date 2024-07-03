@@ -26,9 +26,9 @@ export const SubmittedTanzaku: React.FC<Props> = ({ projectId }) => {
   const text = searchParams.get('text') || ''
   const name = searchParams.get('name') || ''
 
-  const linkTw = `https://twitter.com/intent/post?text=%23iTL%E4%B8%83%E5%A4%95%E7%A5%AD%20%E3%81%AB%E7%9F%AD%E5%86%8A%E3%82%92%E6%8A%95%E7%A8%BF%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%20%0A%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%91%E3%82%B9%E3%83%AD%E3%83%93%E3%83%BC%E3%81%A7%E3%81%94%E8%A6%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%EF%BC%81%0A%40itl_marubu%0A%0A${text}%0A%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A${name}`
+  const linkTw = `https://twitter.com/intent/post?text=%23iTL%E4%B8%83%E5%A4%95%E7%A5%AD2024+%E3%81%AB%E7%9F%AD%E5%86%8A%E3%82%92%E6%8A%95%E7%A8%BF%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%20%0A%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%91%E3%82%B9%E3%83%AD%E3%83%93%E3%83%BC%E3%81%A7%E3%81%94%E8%A6%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%EF%BC%81%0A%40itl_marubu%0A%0A${text}%0A%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A${name}`
 
-  const linkMisskey = `https://misskeyshare.link/share.html?text=%23iTL%E4%B8%83%E5%A4%95%E7%A5%AD%20%E3%81%AB%E7%9F%AD%E5%86%8A%E3%82%92%E6%8A%95%E7%A8%BF%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%20%0A%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%91%E3%82%B9%E3%83%AD%E3%83%93%E3%83%BC%E3%81%A7%E3%81%94%E8%A6%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%EF%BC%81%0A%0A%0A${text}%0A%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A${name}`
+  const linkMisskey = `https://misskeyshare.link/share.html?text=%23iTL%E4%B8%83%E5%A4%95%E7%A5%AD2024+%E3%81%AB%E7%9F%AD%E5%86%8A%E3%82%92%E6%8A%95%E7%A8%BF%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%20%0A%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%91%E3%82%B9%E3%83%AD%E3%83%93%E3%83%BC%E3%81%A7%E3%81%94%E8%A6%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%EF%BC%81%0A%0A%0A${text}%0A%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A${name}`
 
   useEffect(() => {
     const fetchProject = async () => {
